@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ALN SupplyLens — интеллектуальная система формирования и обоснования заказов поставщикам." />
+    <meta name="theme-color" content="#d92332" />
+    <title>ALN SupplyLens</title>
+    <link rel="icon" type="image/png" href="assets/aln-logo.png" />
+    <link rel="stylesheet" href="styles.css?v=20260923-2" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Перейти к содержанию</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Основная навигация">
+        <div class="brand-block">
+          <img class="brand-logo" src="assets/aln-logo.png" alt="Логотип ALN" />
+          <div>
+            <p class="brand-name">ALN SupplyLens</p>
+            <p class="brand-tagline">Видит реальный спрос.<br />Объясняет каждую закупку.</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Разделы системы">
+          <button class="nav-item active" data-view="overview" aria-current="page"><span class="nav-mark">01</span>Обзор</button>
+          <button class="nav-item" data-view="orders"><span class="nav-mark">02</span>Заказы</button>
+          <button class="nav-item" data-view="product"><span class="nav-mark">03</span>Карточка товара</button>
+          <button class="nav-item" data-view="scenarios"><span class="nav-mark">04</span>Сценарии</button>
+          <button class="nav-item" data-view="quality"><span class="nav-mark">05</span>Качество данных</button>
+          <button class="nav-item" data-view="export"><span class="nav-mark">06</span>Экспорт</button>
+        </nav>
+
+        <div class="sidebar-foot">
+          <span class="status-dot success" aria-hidden="true"></span>
+          <div><strong>Данные обновлены</strong><br /><span>Сегодня, 09:45</span></div>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="menu-toggle" aria-label="Открыть навигацию" aria-expanded="false">Меню</button>
+          <div class="topbar-brand" aria-label="ALN SupplyLens">
+            <img class="topbar-logo" src="assets/aln-logo.png" alt="Логотип ALN" />
+            <div><strong><span>ALN</span> SupplyLens</strong><small>Видит реальный спрос. Объясняет каждую закупку.</small></div>
+          </div>
+          <div class="topbar-actions">
+            <button class="text-button" id="refreshData" type="button">Обновить расчёт</button>
+            <div class="user-chip" aria-label="Пользователь: Алия, менеджер закупа"><span>А</span><div><strong>Алия</strong><small>Менеджер закупа</small></div></div>
+          </div>
+        </header>
+
+        <main id="main-content" class="main-content" tabindex="-1">
+          <section class="view active" id="overview" aria-labelledby="overview-title">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">ЦЕНТР УПРАВЛЕНИЯ ЗАКУПКАМИ</p>
+                <h1 id="overview-title">Закупки, которые<br /><span>можно объяснить.</span></h1>
+                <p class="lead">ALN SupplyLens отделил регулярный спрос от аномалий и подготовил решения для проверки.</p>
+              </div>
+              <div class="calculation-stamp"><span>Расчёт готов</span><strong>23.09.2026</strong><small>обновлено 09:45</small></div>
+            </div>
+
+            <div class="kpi-grid">
+              <article class="metric-card emphasis"><p>К утверждению</p><strong id="approvalCount">12</strong><span>позиций в 4 заказах</span><button data-view="orders" class="inline-link">Открыть заказы <b aria-hidden="true">→</b></button></article>
+              <article class="metric-card"><p>Риск дефицита</p><strong class="danger">6</strong><span>позиций требуют реакции</span><div class="metric-note danger-note"><span aria-hidden="true">!</span> 2 позиции критичны</div></article>
+              <article class="metric-card"><p>Покрытие запаса</p><strong>24 <small>дня</small></strong><span>целевой коридор: 21–30 дней</span><div class="progress" aria-label="Покрытие запаса: 24 дня из 30"><i style="width:80%"></i></div></article>
+              <article class="metric-card"><p>Отклонено как аномалия</p><strong>37%</strong><span>объёма разовых продаж</span><div class="metric-note neutral-note"><span aria-hidden="true">↗</span> не влияет на регулярный спрос</div></article>
+            </div>
+
+            <div class="dashboard-grid">
+              <article class="panel demand-panel">
+                <div class="panel-header"><div><p class="eyebrow">ПРОГНОЗ СПРОСА</p><h2>Спрос и доступный запас</h2></div><button class="select-like" type="button" aria-label="Период: 12 недель">12 недель <span>⌄</span></button></div>
+                <div class="legend" aria-label="Легенда графика"><span><i class="legend-line actual"></i>Факт / прогноз</span><span><i class="legend-line stock"></i>Доступный запас</span><span><i class="legend-area"></i>Период риска</span></div>
+                <div class="chart-wrap" role="img" aria-label="График спроса и запаса по неделям. Критический риск дефицита ожидается через 4 недели.">
+                  <div class="y-labels"><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div>
+                  <svg class="demand-chart" viewBox="0 0 780 285" preserveAspectRatio="none" aria-hidden="true">
+                    <defs><linearGradient id="fillRed" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d92332" stop-opacity=".18"/><stop offset="1" stop-color="#d92332" stop-opacity="0"/></linearGradient></defs>
+                    <g class="chart-grid"><path d="M0 18H780M0 81H780M0 144H780M0 207H780M0 270H780"/></g>
+                    <rect x="510" y="0" width="130" height="270" class="risk-zone"/>
+                    <path class="area-path" d="M0 182 L71 163 L142 173 L213 130 L284 142 L355 99 L426 112 L497 78 L568 86 L639 58 L710 73 L780 43 L780 270 L0 270 Z"/>
+                    <path class="forecast-line" d="M0 182 L71 163 L142 173 L213 130 L284 142 L355 99 L426 112 L497 78 L568 86 L639 58 L710 73 L780 43"/>
+                    <path class="stock-line" d="M0 73 L71 83 L142 94 L213 108 L284 125 L355 144 L426 163 L497 181 L568 204 L639 228 L710 247 L780 262"/>
+                    <circle cx="568" cy="204" r="5" class="critical-dot"/><line x1="568" y1="204" x2="568" y2="16" class="critical-marker"/>
+                  </svg>
+                  <div class="risk-callout"><strong>Риск дефицита</strong><span>через 4 недели</span></div>
+                  <div class="x-labels"><span>25 авг</span><span>01 сен</span><span>08 сен</span><span>15 сен</span><span>22 сен</span><span>29 сен</span><span>06 окт</span><span>13 окт</span></div>
+                </div>
+                <footer class="panel-footer"><span>Прогноз учитывает сезонность, рост, stockout и аномалии.</span><button data-view="product" class="inline-link">Разобрать расчёт <b aria-hidden="true">→</b></button></footer>
+              </article>
+
+              <article class="panel risks-panel">
+                <div class="panel-header"><div><p class="eyebrow">ТРЕБУЮТ ВНИМАНИЯ</p><h2>Приоритеты на сегодня</h2></div><button data-view="orders" class="icon-button" aria-label="Открыть все риски">↗</button></div>
+                <div class="risk-list">
+                  <div class="risk-row critical"><span class="risk-icon" aria-hidden="true">!</span><div><strong>Кабель ВВГнг 3×2.5</strong><small>остаток закончится через 5 дней</small></div><span class="badge critical-badge">Критично</span></div>
+                  <div class="risk-row warning"><span class="risk-icon" aria-hidden="true">!</span><div><strong>Автоматический выключатель C16</strong><small>в пути меньше минимальной партии</small></div><span class="badge warning-badge">Внимание</span></div>
+                  <div class="risk-row normal"><span class="risk-icon" aria-hidden="true">✓</span><div><strong>Розетка скрытой установки</strong><small>покрытие в целевом диапазоне</small></div><span class="badge normal-badge">Норма</span></div>
+                  <div class="risk-row unknown"><span class="risk-icon" aria-hidden="true">?</span><div><strong>Контактор КМИ 25А</strong><small>недостаточно истории продаж</small></div><span class="badge unknown-badge">Мало данных</span></div>
+                </div>
+                <footer class="panel-footer"><span><i class="status-dot danger"></i> 6 критических и предупреждающих позиций</span><button data-view="quality" class="inline-link">Проверить данные <b aria-hidden="true">→</b></button></footer>
+              </article>
+            </div>
+
+            <article class="panel supplier-panel">
+              <div class="panel-header"><div><p class="eyebrow">ОЧЕРЕДЬ РЕШЕНИЙ</p><h2>Заказы по поставщикам</h2></div><button data-view="orders" class="outline-button">Все заказы <span>→</span></button></div>
+              <div class="supplier-columns">
+                <div><div class="supplier-name"><span class="supplier-avatar">ЭК</span><strong>Электрокомплект</strong><span class="badge critical-badge">2 риска</span></div><p>5 позиций · 7–10 дней поставки</p><strong class="supplier-total">₸ 1 248 000</strong><button data-view="orders" class="inline-link">Открыть заказ →</button></div>
+                <div><div class="supplier-name"><span class="supplier-avatar gray">АС</span><strong>Астана Свет</strong><span class="badge warning-badge">1 риск</span></div><p>4 позиции · 10–14 дней поставки</p><strong class="supplier-total">₸ 684 500</strong><button data-view="orders" class="inline-link">Открыть заказ →</button></div>
+                <div><div class="supplier-name"><span class="supplier-avatar dark">ЭН</span><strong>ЭнергоТрейд</strong><span class="badge normal-badge">Норма</span></div><p>3 позиции · 5–7 дней поставки</p><strong class="supplier-total">₸ 311 700</strong><button data-view="orders" class="inline-link">Открыть заказ →</button></div>
+              </div>
+            </article>
+          </section>
+
+          <section class="view" id="orders" aria-labelledby="orders-title">
+            <div class="page-heading compact"><div><p class="eyebrow">РЕКОМЕНДОВАННЫЕ ЗАКАЗЫ</p><h1 id="orders-title">Решения до отправки<br /><span>поставщикам.</span></h1><p class="lead">Каждая рекомендация объяснена и требует подтверждения ответственного сотрудника.</p></div><button id="approveAll" class="primary-button">Подтвердить выбранное <span>→</span></button></div>
+            <div class="orders-toolbar"><div class="filter-group" role="group" aria-label="Фильтры заказов"><button class="filter-chip selected" data-filter="all">Все <span>12</span></button><button class="filter-chip" data-filter="critical">Критичные <span>2</span></button><button class="filter-chip" data-filter="warning">Внимание <span>4</span></button><button class="filter-chip" data-filter="normal">Норма <span>5</span></button><button class="filter-chip" data-filter="unknown">Мало данных <span>1</span></button></div><label class="search-field"><span aria-hidden="true">⌕</span><input id="orderSearch" type="search" placeholder="Поиск по товару" /></label></div>
+            <article class="panel table-panel">
+              <div class="table-topline"><div><strong>Электрокомплект</strong><span>Поставка 7–10 дней · Мин. партия учтена</span></div><span class="order-status"><i class="status-dot danger"></i> Требует подтверждения</span></div>
+              <div class="table-scroll"><table><caption class="sr-only">Рекомендованные позиции заказа у поставщика Электрокомплект</caption><thead><tr><th><input class="select-all" type="checkbox" aria-label="Выбрать все видимые позиции" checked /></th><th>Товар</th><th>Доступно</th><th>Прогноз 30 дн.</th><th>Рекомендуем заказать</th><th>Статус</th><th>Обоснование</th><th></th></tr></thead><tbody id="ordersBody"></tbody></table></div>
+              <footer class="table-footer"><div><span>Выбрано: <strong id="selectedItems">4 позиции</strong></span><span>Сумма: <strong id="selectedSum">₸ 1 248 000</strong></span></div><button class="primary-button small" id="openConfirm">Проверить и подтвердить <span>→</span></button></footer>
+            </article>
+            <p class="privacy-note"><strong>Конфиденциальность:</strong> идентификаторы клиентов обезличены. Заказ не будет отправлен автоматически.</p>
+          </section>
+
+          <section class="view" id="product" aria-labelledby="product-title">
+            <div class="breadcrumb"><button data-view="orders">Заказы</button><span>/</span><span>Электрокомплект</span><span>/</span><strong>ВВГнг 3×2.5</strong></div>
+            <div class="product-heading"><div><p class="eyebrow">КАРТОЧКА ТОВАРА · EK-04256</p><h1 id="product-title">Кабель ВВГнг 3×2.5</h1><p class="lead">Регулярный спрос растёт. Запас не покрывает срок поставки.</p></div><span class="badge critical-badge large-badge"><b aria-hidden="true">!</b> Критично: 5 дней покрытия</span></div>
+            <div class="product-summary"><article><p>Рекомендация</p><strong class="red-number">500 <small>м</small></strong><span>₸ 324 000 · поставка 7–10 дней</span></article><article><p>Доступный запас</p><strong>68 <small>м</small></strong><span>на складе: 68 · в пути: 0</span></article><article><p>Регулярный спрос</p><strong>11,2 <small>м / день</small></strong><span class="up">↗ +16% к предыдущему периоду</span></article><article><p>Упущенный спрос</p><strong>34 <small>м</small></strong><span>компенсирован за 3 дня stockout</span></article></div>
+            <div class="product-grid"><article class="panel explanation-panel"><div class="panel-header"><div><p class="eyebrow">ПОЧЕМУ 500 МЕТРОВ?</p><h2>Расчёт рекомендации</h2></div><button class="icon-button" aria-label="Скопировать объяснение">⧉</button></div><ol class="explain-steps"><li><span>01</span><div><strong>Спрос на срок поставки</strong><p>11,2 м/день × 10 дней = <b>112 м</b>. Учтены сезонность и устойчивый рост спроса.</p></div></li><li><span>02</span><div><strong>Целевой страховой запас</strong><p>Поддерживаем 21 день покрытия: <b>235 м</b>.</p></div></li><li><span>03</span><div><strong>Компенсация упущенного спроса</strong><p>В периоды отсутствия товара не зафиксировано 34 м продаж: <b>+34 м</b>.</p></div></li><li><span>04</span><div><strong>Минус доступный запас</strong><p>На складе 68 м, подтверждённых поставок нет: <b>−68 м</b>.</p></div></li><li class="final-step"><span>Σ</span><div><strong>Итог с учётом минимальной партии 100 м</strong><p><b>500 м</b> — рекомендованное количество заказа.</p></div></li></ol></article>
+              <article class="panel trend-panel"><div class="panel-header"><div><p class="eyebrow">СИГНАЛЫ МОДЕЛИ</p><h2>Что повлияло на расчёт</h2></div></div><div class="signal-stack"><div><span class="signal-key seasonal">S</span><div><strong>Сезонность</strong><p>Ожидаемый осенний рост спроса: +9%</p></div><b>+22 м</b></div><div><span class="signal-key growth">↗</span><div><strong>Устойчивый рост</strong><p>Тренд за 12 недель: +16%</p></div><b>+38 м</b></div><div><span class="signal-key stockout">!</span><div><strong>Период stockout</strong><p>3 дня без доступного остатка</p></div><b>+34 м</b></div><div><span class="signal-key anomaly">×</span><div><strong>Исключённая аномалия</strong><p>Разовая сделка: 480 м одному клиенту</p></div><b>−480 м</b></div></div><footer class="panel-footer"><span>Алгоритм устойчив к выбросам и не использует персональные данные клиентов.</span></footer></article></div>
+          </section>
+
+          <section class="view" id="scenarios" aria-labelledby="scenarios-title">
+            <div class="page-heading compact"><div><p class="eyebrow">МОДЕЛИРОВАНИЕ</p><h1 id="scenarios-title">Проверьте решение<br /><span>до закупки.</span></h1><p class="lead">Изменяйте условия — SupplyLens показывает влияние на рекомендованный заказ.</p></div><div class="calculation-stamp slim"><span>Базовый сценарий</span><strong id="scenarioState">Текущий спрос</strong></div></div>
+            <div class="scenario-grid"><article class="panel scenario-controls"><div class="panel-header"><div><p class="eyebrow">ПАРАМЕТРЫ</p><h2>Условия сценария</h2></div><button id="resetScenario" class="text-button">Сбросить</button></div><div class="control-list"><label><span>Изменение спроса <strong id="demandValue">0%</strong></span><input id="demandRange" type="range" min="-20" max="35" value="0" /><small>Влияет на регулярный спрос и страховой запас.</small></label><label><span>Срок поставки <strong id="leadValue">10 дней</strong></span><input id="leadRange" type="range" min="5" max="21" value="10" /><small>Проверьте сценарий задержки поставщика.</small></label><label class="switch-label"><span><strong>Учесть товар в пути: 120 м</strong><small>Уменьшает объём новой закупки.</small></span><input id="transitToggle" type="checkbox" role="switch" /><i aria-hidden="true"></i></label><label class="switch-label"><span><strong>Компенсировать stockout</strong><small>Возвращает вероятно упущенный спрос в прогноз.</small></span><input id="stockoutToggle" type="checkbox" role="switch" checked /><i aria-hidden="true"></i></label></div></article>
+              <article class="panel scenario-result"><div class="panel-header"><div><p class="eyebrow">РЕЗУЛЬТАТ</p><h2>Влияние на заказ</h2></div><span class="badge normal-badge">Объяснимо</span></div><div class="scenario-amount"><p>Рекомендуемое количество</p><strong id="scenarioQuantity">500 <small>м</small></strong><span id="scenarioDelta">Без изменений к базовой рекомендации</span></div><div class="scenario-bars"><div><span>Спрос на срок поставки</span><i><b id="demandBar" style="width:42%"></b></i><strong id="demandCalc">112 м</strong></div><div><span>Страховой запас</span><i><b id="safetyBar" style="width:72%"></b></i><strong id="safetyCalc">235 м</strong></div><div><span>Корректировки</span><i><b id="adjustmentBar" style="width:40%"></b></i><strong id="adjustmentCalc">+34 м</strong></div><div><span>Доступно / в пути</span><i><b class="dark-fill" id="availableBar" style="width:24%"></b></i><strong id="availableCalc">−68 м</strong></div></div><div class="scenario-insight" id="scenarioInsight"><b aria-hidden="true">✓</b><p><strong>Решение стабильно.</strong> Рекомендация укладывается в порог минимальной партии поставщика.</p></div></article></div>
+            <article class="panel presets-panel"><div><p class="eyebrow">БЫСТРЫЕ СЦЕНАРИИ</p><h2>Проверьте критичные условия</h2></div><div class="preset-row"><button class="scenario-preset" data-demand="20" data-lead="10"><span>↗</span><strong>Спрос +20%</strong><small>Сезонный всплеск</small></button><button class="scenario-preset" data-demand="0" data-lead="16"><span>⌛</span><strong>Задержка поставки</strong><small>16 дней вместо 10</small></button><button class="scenario-preset" data-demand="-12" data-lead="8"><span>↓</span><strong>Спрос −12%</strong><small>Консервативный прогноз</small></button></div></article>
+          </section>
+
+          <section class="view" id="quality" aria-labelledby="quality-title">
+            <div class="page-heading compact"><div><p class="eyebrow">НАДЁЖНОСТЬ РЕШЕНИЙ</p><h1 id="quality-title">Качественные данные.<br /><span>Надёжные закупки.</span></h1><p class="lead">SupplyLens показывает, какие данные участвуют в расчёте и где требуется проверка.</p></div><div class="quality-score"><span>Индекс качества</span><strong>92<small>/100</small></strong><p>Достаточно для расчёта</p></div></div>
+            <div class="quality-overview"><article class="panel quality-main"><div class="quality-ring" role="img" aria-label="Индекс качества данных 92 из 100"><span>92<small>/100</small></span></div><div><p class="eyebrow">ОБЩАЯ ОЦЕНКА</p><h2>Данные пригодны для расчёта</h2><p>Все критические источники подключены. Есть 3 рекомендации по улучшению полноты справочников.</p></div><button class="outline-button" id="runQuality">Запустить проверку <span>↻</span></button></article><article class="panel source-coverage"><p class="eyebrow">ПОКРЫТИЕ ИСТОЧНИКОВ</p><div><strong>6/6</strong><span>источников участвуют в расчёте</span></div><div class="progress"><i style="width:100%"></i></div><small>Изменение любого источника отражается в рекомендациях.</small></article></div>
+            <div class="quality-grid"><article class="panel source-list"><div class="panel-header"><div><p class="eyebrow">ИСТОЧНИКИ ДАННЫХ</p><h2>Статус загрузок</h2></div><button class="select-like">Все источники <span>⌄</span></button></div><div class="data-source"><span class="source-icon">S</span><div><strong>История продаж</strong><small>1 248 639 строк · обновлено сегодня</small></div><span class="badge normal-badge">Полно</span></div><div class="data-source"><span class="source-icon">O</span><div><strong>Остатки по складам</strong><small>8 складов · сверка 09:37</small></div><span class="badge normal-badge">Полно</span></div><div class="data-source"><span class="source-icon">T</span><div><strong>Товары в пути</strong><small>94 позиции · обновлено вчера</small></div><span class="badge warning-badge">Проверить</span></div><div class="data-source"><span class="source-icon">P</span><div><strong>Поставщики и сроки</strong><small>42 поставщика · 3 неполных карточки</small></div><span class="badge warning-badge">Проверить</span></div><div class="data-source"><span class="source-icon">×</span><div><strong>Периоды stockout</strong><small>Восстановлено из истории остатков</small></div><span class="badge normal-badge">Полно</span></div></article>
+              <article class="panel safeguards"><div class="panel-header"><div><p class="eyebrow">ЗАЩИТА РАСЧЁТА</p><h2>Контроль ограничений</h2></div></div><div class="safeguard"><span class="check-icon">✓</span><div><strong>Данные клиентов обезличены</strong><p>В расчётах используются только анонимные идентификаторы.</p></div></div><div class="safeguard"><span class="check-icon">✓</span><div><strong>Выбросы исключены</strong><p>1 834 разовых крупных продажи не искажают прогноз.</p></div></div><div class="safeguard"><span class="check-icon">✓</span><div><strong>Объяснение сформировано</strong><p>Каждая рекомендация содержит факторы расчёта.</p></div></div><div class="safeguard neutral"><span class="check-icon">i</span><div><strong>Ничего не отправляется автоматически</strong><p>Экспорт и утверждение заказа требуют ручного подтверждения.</p></div></div></article></div>
+          </section>
+
+          <section class="view" id="export" aria-labelledby="export-title">
+            <div class="page-heading compact"><div><p class="eyebrow">ПОДГОТОВКА ВЫГРУЗКИ</p><h1 id="export-title">Из решения —<br /><span>в рабочий процесс.</span></h1><p class="lead">Сформируйте совместимый файл для учётной системы или отправьте его на внутреннее согласование.</p></div><div class="calculation-stamp slim"><span>Будет выгружено</span><strong>4 поставщика</strong><small>12 позиций</small></div></div>
+            <div class="export-grid"><article class="panel export-settings"><div class="panel-header"><div><p class="eyebrow">НАСТРОЙКИ ВЫГРУЗКИ</p><h2>Состав файла</h2></div></div><fieldset><legend>Формат</legend><label class="radio-card checked"><input type="radio" name="format" value="csv" checked /><span><strong>CSV для 1С</strong><small>Структура полей совместима с учётной системой</small></span><b>CSV</b></label><label class="radio-card"><input type="radio" name="format" value="xlsx" /><span><strong>Excel для проверки</strong><small>С объяснениями и дополнительными полями</small></span><b>XLSX</b></label></fieldset><fieldset><legend>Включить в выгрузку</legend><label class="checkbox-row"><input type="checkbox" checked /><span>Обоснование рекомендованного количества</span></label><label class="checkbox-row"><input type="checkbox" checked /><span>Срочность и риск дефицита</span></label><label class="checkbox-row"><input type="checkbox" checked /><span>Товар в пути и остатки</span></label></fieldset></article>
+              <article class="panel export-preview"><div class="panel-header"><div><p class="eyebrow">ПРЕДПРОСМОТР</p><h2>Заказ для Электрокомплект</h2></div><span class="badge critical-badge">Требует подтверждения</span></div><div class="preview-paper"><div class="preview-logo"><img src="assets/aln-logo.png" alt="Логотип ALN" /><div><strong>ALN SupplyLens</strong><span>Рекомендованный заказ</span></div><time>23.09.2026</time></div><dl><div><dt>Поставщик</dt><dd>ТОО «Электрокомплект»</dd></div><div><dt>Позиций</dt><dd>5</dd></div><div><dt>Сумма</dt><dd>₸ 1 248 000</dd></div><div><dt>Ответственный</dt><dd>Алия С.</dd></div></dl><div class="preview-lines"><span></span><span></span><span></span><span></span></div></div><div class="export-confirm"><span class="check-icon">!</span><p><strong>Файл не будет отправлен поставщику.</strong><br />Сначала скачайте его или передайте на согласование.</p></div><button id="exportButton" class="primary-button full">Скачать CSV для 1С <span>↓</span></button></article></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="confirmModal" hidden>
+      <section class="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <button class="modal-close" aria-label="Закрыть">×</button>
+        <p class="eyebrow">ПОСЛЕДНИЙ ШАГ</p><h2 id="confirm-title">Подтвердить рекомендации?</h2><p>Вы подтверждаете решение для 4 позиций на сумму <strong>₸ 1 248 000</strong>. Заказ останется в статусе «подтверждён» и не будет отправлен поставщику автоматически.</p>
+        <label class="checkbox-row confirm-checkbox"><input id="responsibilityCheckbox" type="checkbox" /><span>Я проверил(а) рекомендации и беру ответственность за утверждение.</span></label>
+        <div class="modal-actions"><button class="outline-button modal-cancel">Отмена</button><button class="primary-button" id="finalApprove" disabled>Подтвердить <span>→</span></button></div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
